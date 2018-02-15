@@ -1,0 +1,616 @@
+/*Estilos generales*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700" rel="stylesheet');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cabecera{
+    border: solid 2px rgba(248, 248, 255, 0.644);
+    background-color: rgba(255, 0, 0, 0.349);
+}
+
+body {
+    font-family: sans-serif;
+    color: rgb(97, 96, 96);
+    font-size: 20px;
+    /* background-color: rgb(168, 214, 214); */
+}
+
+p {
+    line-height: 1.5em;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none; /*para quitarle la barrita de debajo de enlace*/
+    color: orangered;
+}
+
+a:hover {
+    color: violet;
+}
+
+a.activo {
+    color: violet;
+}
+
+img {
+    max-width: 100%; 
+}
+
+.borde{
+    border: 2px solid red;
+}
+
+.boton {
+    margin: 20px;
+    color: white;
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: goldenrod;
+}
+
+.naranja {background-color: orangered;}
+.amarillo {background-color: #E8A50A;}
+.azul {background-color: #0D71B9;}
+
+.naranja:hover {
+    background-color: rgb(167, 44, 0);
+    color: white;
+}
+.amarillo:hover {
+    background-color: rgb(180, 127, 3);
+    color: white;
+}
+.azul:hover {
+    background-color: rgb(0, 80, 138);
+    color: white;
+}
+
+/*para que parpadee el elemento de la flechita*/
+@keyframes intermitente {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+
+}
+
+.fila {
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.primera {
+    margin-top: 100px;
+}
+
+.fondo {
+    margin: 0;
+    padding: 60px 40px;
+    background-image: url('../img/mobile-phone-1875813_1920.jpg');
+    background-position: center;
+    background-size: cover;
+   /* background-attachment: fixed; Efecto Parallax*/
+}
+
+.col1 {
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 1;
+}
+
+.col2 {
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 2; /*el valor de referencia es 300 pixeles pero cuando tengan espacio 
+                    una crecerá una unidad y la otra dos unidades.*/
+}
+
+/*Con estas dimensiones apenas se nota, pero en teoría este crece el triple que el 1*/
+.col3 {
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 3;
+}
+
+.centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.pie {
+    display: flex;
+    align-items: flex-end;
+}
+
+.eslogan {
+    font-size: 50px;
+    padding: 20px;
+    background-color: rgba(218, 165, 32, 0.829); /* rgba(255, 254, 254, 0.651);*/
+    color: white;
+}
+
+.separador {
+    border: solid 1px #E8A50A;
+    display: none;
+    width: 60%;
+}
+
+/*Cabecera barra de navegación*/
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: flex; /*el eje horizontal es el principal*/
+    justify-content: space-between; /*lleva los elementos a los extremos, por una parte el logo y por la otra la lista*/
+    align-items: center; /*hemos centrado verticalmente ambos elementos, logo y lista*/
+    /* background-color: grey; */
+    padding: 0 10px;
+    box-shadow: 0px 4px 4px grey;
+}
+
+header.blanco {
+    box-shadow: initial;
+}
+
+.burger {
+    font-size: 34px;
+    display: none;
+}
+
+
+.blanco .burger {
+    color: rgb(156, 116, 22);
+}
+
+.blanco .burger:hover {
+    color: #E8A50A;
+}
+
+.logo {
+    font-size: 80px;
+    color: #3f3f3f;
+}
+
+.blanco .logo {
+    color: white;
+}
+
+.blanco .logo:hover {
+    color: #E8A50A;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex; /*esto hace que los elementos se pongan de manera horizontal*/
+}
+
+header nav ul li {
+    padding: 0 15px;
+}
+
+.blanco nav ul li a {
+    color: white;
+}
+
+.blanco nav ul li a:hover {
+    color: violet;
+}
+
+.blanco nav ul li a.activo {
+    color: violet;
+}
+
+
+/*Formulario newsletter*/
+
+.miniform {
+    width: 100%; /*Para que queden uno encima de otro*/
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.miniform input {
+    border: solid 1px goldenrod;
+    color: goldenrod;
+    font-size: 24px;
+    padding: 10px;
+}
+
+input:focus {
+    outline: none; /*para que cuando pulsemos en el input no se cambia el color del borde*/
+}
+
+.miniform .boton {
+    border: solid 1px goldenrod;
+    background-color: goldenrod;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.miniform p {
+    color: rgb(184, 133, 4);
+    font-size: 28px;
+}
+
+/*Footer*/
+
+footer {
+    /*All credits Lea Verou en CSS3 patterns*/
+    background-color:black;
+        background-image:
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+        background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+        background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+footer p {
+    font-size: 18px;
+    padding: 5px;
+}
+
+.izquierdo {
+    padding: 20px;
+    flex-basis: 300px;
+    flex-grow: 1;
+}
+
+.drch{
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; /*QUEDA COMO UNA COLUMNA*/ 
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.centro {
+    padding:20px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a{
+    color: orangered;
+    font-size: 18px;
+    padding: 5px;
+}
+
+footer a.activo {
+    color: violet;
+}
+
+footer a:hover{
+    color: violet;
+}
+
+
+.derecho {
+    padding: 15px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; /*QUEDA COMO UNA COLUMNA*/ 
+    justify-content: space-between;
+    align-items: center; /*Con center nos queda centrado*/
+
+}
+
+
+.rrss a{
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+}
+
+
+.copy {
+    padding: 5px;
+    width: 100%;
+}
+
+.copy p{
+    font-size: 14px;
+    text-align: center;
+}
+
+.top {
+    height: 50px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    top: -30px;
+    left: 50%; /*es lo que lo pone en la mitad de la página*/
+    transform: translateX(-50%); /*La mitad del ancho del elemento*/
+    font-size: 36px;
+    color: orangered;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.derecho .facebook:hover{
+    color: #3b5998;
+ 
+}
+
+.derecho .twitter:hover{
+    color:#00acee;
+}
+
+.derecho .youtube:hover{
+    color:#c4302b;
+}
+
+.derecho .instagram:hover{
+    color:#f001dc;
+}
+
+.face,.twi,.you,.inst{
+    display: inline;
+    color: white;
+}
+
+.fac{
+    color: #3b5998;
+}
+
+.twit{
+    color: #00acee;
+}
+
+.yout{
+    color:#c4302b;
+}
+
+.insta{
+    color:#f001dc;
+}
+
+/*Estilos para contacto*/
+
+.direccion { /*interlineado*/
+    line-height: 2em;
+}
+
+.legales h1 {
+    font-size: 28px;
+    padding-bottom: 10px;
+}
+
+.legales h1+h2{
+    padding-top: 10px;
+}
+
+.legales h2 {
+    font-size: 18px;
+}
+
+.legales p, li {
+    font-size: 20px;
+    padding: 10px;
+    line-height: 1.5em;
+}
+
+.legales ul {
+    padding-left: 40px;
+}
+
+.col50{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.col100{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.col33{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.col66{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 66%;
+}
+
+form{
+    margin:0 auto;
+    width:50%;
+    padding: 10px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    z-index: 1;
+}
+
+/*Media Queries*/
+
+@media (min-width: 1280px) {
+   
+ .fondo {
+        background-attachment: fixed; /*hace efecto parallax*/
+    }
+}
+
+@media(max-width:720px){
+
+    .fila{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* .col1, .col2, .col3 {
+        flex-basis: initial;
+    } */
+
+    .columna{
+        margin:20px;
+    }
+
+    .separador{
+        display: initial;
+    }
+    
+    form{
+        width:80%;
+    }
+  
+    
+
+}
+
+@media (max-width:640px){
+
+    .burger{
+        display: initial;
+    }
+
+
+    nav {
+        display: none;
+    }
+
+
+    .hero h1{
+        font-size: 36px;
+        text-align: center;
+        padding: 0 20px;
+     }
+
+    .hero h2{
+        font-size: 24px;
+        text-align: center;
+        padding: 0 20px;
+     }
+
+    .eslogan{
+        font-size: 30px;
+        margin:0;
+    }
+
+    .fondo{
+        padding: 0 20px;
+    }
+    .miniform{
+        text-align: center;
+    }
+
+    .izquierdo .centro .derecho{
+        flex-basis: 200px;
+    }
+
+    .derecho{
+        justify-content: center;
+    }
+
+    .izquierdo{
+        text-align: center;
+    }
+    .col50, .col33, .col66{
+        width: 100%;
+    }
+
+    .colradio{
+        justify-content: center;
+    }
+
+    .colboton{
+        margin-top:30px;
+        display: flex;
+        flex-direction: column;
+       align-items: center;
+        width: 100%;
+    }  
+    
+    .izdo .centro .dcho {
+        flex-basis: 200px;
+    }
+
+}
+
+@media (max-width: 420px){
+
+    .fila{
+        margin: 20px 0px 20px 0px;
+    }
+
+    .fila.primera{
+        margin: 100px 0px 20px 0px;
+    }
+
+    .miniform input {
+        font-size: 20px;
+    }
+    
+    .miniform .boton {
+        font-size: 20px;
+    }
+
+    .ultima{
+        margin: 20px 0 40px 0;
+    }
+
+    .izquierdo{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .derecho a{
+        font-size: 22px;
+    }
+    
+    .col50, .col33, .col66, .col100{
+        padding: 10px 10px 0; 
+     }
+
+     .colradio,.colboton{
+         margin-top: 0px;
+     }
+}

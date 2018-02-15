@@ -1,0 +1,438 @@
+/*Estilos generales*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:  sans-serif,cursive;
+    color: #3f3f3f;
+    font-size: 20px;
+}
+
+p{
+   line-height: 1.5em;/*interlineado(espacio entre lineas)*/
+   padding: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color:violet; /*Color/es corporativos*/
+}
+
+/*Cabecera barra de navegación*/
+
+.cabecera{
+    border: solid 2px rgba(248, 248, 255, 0.644);
+    background-color: rgba(255, 0, 0, 0.349);
+}
+
+header{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow:  0px 4px 4px grey;
+}
+
+.burger{ 
+    font-size: 34px;
+    color: rgb(207, 18, 18);
+    display: none;
+}
+
+.logo{
+    font-size: 28px;
+    color: red;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    padding: 0 15px;
+}
+
+header nav ul li a {
+    color: orangered;
+}
+
+/*Hero*/
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/fondoinicio.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero h1{
+    color: rgb(207, 18, 18);
+    font-size: 50px;
+}
+
+.hero h2{
+    color: rgb(207, 18, 18);
+    font-size: 50px;
+}
+
+.hero a{
+    color: rgb(207, 18, 18);
+    font-size: 40px;
+    margin-bottom: 60px;
+    animation-name: intermitente;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes intermitente{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+.fila{
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;/*coloca el texto conjunto a la parte de abajo cuando no tenga espacio*/
+}
+
+.col1{
+    padding: 10px;
+    flex-basis: 300px;/*los telefonos mas pequeño usan 320px*/
+    flex-grow: 1;/*esta crecera 1/3*/
+}
+
+.col2{
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 2;/*esta crecera 2/3*/
+}
+
+.col3{
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 3;/*esta crecera 2/3*/
+}
+
+.columnas{
+    display: flex;
+    align-items: center;
+}
+
+.centrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    max-width: 100%;
+}
+
+.pie{
+    display: flex;
+    align-items: flex-end
+}
+
+.boton{
+    color: white;
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: orangered;
+    margin: 20px;
+}
+
+
+.fondo{
+    margin: 0;
+    padding: 60px 40px;
+    background-image: url("../img/piso inicio2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;/*efecto parallax*/
+}
+
+.eslogan{
+    border: 10px solid #ffffff93;
+    font-size: 40px;
+    padding: 20px;
+    background-color:#b0d9fd79 ;
+}
+
+.separador{
+    border:solid 1px orangered;
+    display: none;
+    width: 60%;
+}
+
+/*formulario newsletter*/
+
+.miniform{
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.miniform input{
+    border: goldenrod 2px solid;
+    color: black;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.input:focus{ /*quitamos el foco(borde del boton)*/
+    outline: none;
+}
+
+.miniform .boton{
+    border: goldenrod 2px solid;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.miniform p{
+    color: goldenrod;
+    font-size: 28px;
+}
+
+/*footer*/
+
+footer{
+    background-color:black;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.top{
+    height: 50px;/*para hacer un elemento redondo necesitamos primero que sea cuadrado*/
+    width: 50px;
+    border-radius: 30px;/* usamos este atributo para poner redondo un elemento cuadrado*/
+    background-color:rgba(255, 255, 255, 0);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);/*la mitad del ancho del elemento*/
+    font-size: 42px;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.izdo{
+    flex-basis: 300px;
+    flex-grow: 1;
+    padding:15px;
+}
+
+.dcho{
+    flex-basis: 300px;
+    flex-grow: 1;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centro{
+    flex-basis: 300px;
+    flex-grow: 1;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centro a {
+    color: white;
+    font-size: 18px;
+    padding: 5px
+}
+
+a.activo{
+    color: violet;
+}
+
+.centro a:hover {
+    color: violet;
+}
+
+.dcho a{
+    color: white;
+    padding: 5px;
+    font-size: 32px;
+}
+
+.copy{
+    width: 100%;
+    padding:5px;
+}
+
+footer p{
+    font-size: 18px;
+    padding: 5px;
+}
+
+.copy p {
+    font-size: 14px;
+    text-align: center;
+}
+
+form{
+    margin:40px 0 0px;
+    width:50%;
+    padding: 10px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+    background-color: white;
+}
+
+.col50{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.col100{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.col33{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.col66{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 66%;
+}
+
+/*media queries(se usan para la adaptabilidad a moviles)*/
+@media (max-width:720px) {
+    .fila{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .columna{
+        margin: 20px;
+    }
+
+    .separador{
+        display: initial;
+    }
+
+    .burger{
+        display: initial;
+    }
+}
+
+
+@media (max-width:640px) {
+    .burger {
+        display: initial;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+        padding: 0 10px;
+        text-align: center;
+    } 
+
+    .fondo{
+        padding: 0 20px 0 20px;
+    }
+
+    .eslogan{
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .miniform{
+        text-align: center;
+    }
+
+    .izdo .centro .dcho {
+        flex-basis: 200px;
+    }
+
+}
+
+@media (max-width:420px) {
+    .fila{
+        margin: 20px 0px 20px 0px;
+    }
+    .miniform input{
+        font-size: 20px;
+    }
+        
+    .miniform .boton{
+        font-size: 20px;
+    }
+
+    .ultima{
+        margin: 20px 0 40px 0;
+    }
+
+    .izdo{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .burger{
+        display: initial;
+    }
+}
